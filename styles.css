@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #232323;
+    color: #CDCDCD;
+}
+
+main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .menu-lines {
+    position: absolute;
+    z-index: 999;
+    width: 35px;
+    height: 35px;
+    margin: 30px 40px;
+}
+
+
+
+.menu .menu-lines span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #CDCDCD;
+    border-radius: 3px;
+}
+
+.menu .faketrigger:checked~.menu-lines span:nth-child(1) {
+    transform-origin: 0% 0%;
+    transform: rotate(45deg) scale(1.25);
+    transition: all ease 1s;
+    background-color: #232323;
+}
+.menu .faketrigger:checked~.menu-lines span:nth-child(2) {
+    opacity: 0;
+    background-color: #232323;
+    transition: all ease 1.5s;
+}
+.menu .faketrigger:checked~.menu-lines span:nth-child(3) {
+    transform-origin: 0% 100%;
+    transform: rotate(-45deg) scale(1.25);
+    transition: all ease 1s;
+    background-color: #232323;
+}
+
+.menu .faketrigger:checked~ul {
+    margin-left: 0;
+}
+
+.menu .menu-itens {
+    position: absolute;
+    z-index: 998;
+    left:0;
+    top:0;
+    width: 300px;
+    height: calc(100vh - 100px);
+    padding-top:100px;
+    margin-left: -300px;
+    background-color: #CDCDCD;
+}
+
+.menu .menu-itens li {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    font-weight: bold;
+    color: #232323;
+}
+
+.menu .menu-itens li:hover {
+    color: #999898;
+    transition: all ease .2s;
+}
+
+
+.menu .faketrigger {
+    position:absolute;
+    width: 35px;
+    height: 35px;
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+    margin: 30px 40px;
+}
+
